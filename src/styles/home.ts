@@ -1,15 +1,35 @@
 import styled from "styled-components";
 
-export const Grid = styled.div`
+export const BackGround = styled.div`
+  background: #eff4fe;
+ &.noite {
+    background: linear-gradient(0deg, #0d0e13, #040327);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: url("/Starts.svg");
+    }
+  }
+`
+
+export const Container = styled.div`
   display: grid;
   height: 100vh;
+  max-width: 1500px;
+margin:  auto;
+  margin: auto;
   grid-template-areas: "main  main aside";
-  
-  @media(max-width: 768px) {
-    grid-template-areas:  "aside"
-                          "main";
 
-                          padding: 2rem 0;
+  @media (max-width: 900px) {
+    grid-template-areas:
+      "aside"
+      "main";
   }
 `;
 export const Aside = styled.aside`
@@ -20,15 +40,26 @@ export const Aside = styled.aside`
   justify-content: center;
   gap: 2rem;
   align-items: center;
-  margin-bottom: 2rem;
+  height: 100%;
+
+  @media (max-width: 900px) {
+    padding: 2rem 0;
+  }
+  &.noite {
+ background: transparent;
+  }
+ 
 `;
 export const Main = styled.main`
   background: #eff4fe;
   grid-area: main;
+
+  &.noite {
+ background: transparent;
+  }
 `;
 
-
-export const CurrentDay = styled.div`
+export const CurrentDay = styled.section`
   width: 80%;
   margin: 0 auto;
   border-radius: 8px;
@@ -39,6 +70,10 @@ export const CurrentDay = styled.div`
   justify-content: space-evenly;
   gap: 1rem;
   flex-direction: column;
+  position: relative;
+  &.noite {
+ background: transparent;
+  }
 
   .info-day {
     display: flex;
@@ -98,13 +133,15 @@ export const StatsSun = styled.section`
   }
 `;
 
-export const CityName = styled.section`
+export const CityName = styled.div`
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
+
   span {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #fefefe;
+
   }
 `;
 
@@ -149,7 +186,7 @@ export const Button = styled.button`
     filter: brightness(0.9);
   }
 `;
-export const LabelSearch = styled.label`
+export const LabelSearch = styled.form`
   position: relative;
   width: 80%;
   display: flex;

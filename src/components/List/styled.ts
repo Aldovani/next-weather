@@ -8,6 +8,7 @@ export const Card = styled.li`
   background: #fefefe;
   padding: 1.5rem 0;
   border-radius: 32px;
+  text-align: center;
 
   display: flex;
   align-items: center;
@@ -19,7 +20,7 @@ export const Card = styled.li`
 `;
 export const GroupList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   align-items: center;
   gap: 1rem;
   justify-content: space-evenly;

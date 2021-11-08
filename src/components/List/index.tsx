@@ -1,23 +1,31 @@
 import React from "react";
 import Image from "next/image";
 
-import { Container, Card, GroupList, Temp ,Loading} from "./styled";
+import { Container, Card, GroupList, Temp, Loading } from "./styled";
+type ListProps = {
+  forecast: {
+    weekday: string;
+    condition: string;
+    description: string;
+    max: number;
+    min: number;
+  }[];
+};
 
-const List = ({ forecast }: any) => {
-  if (!forecast) return     <Loading title="Carregando" />
-  ;
-  else {
-    forecast.length = 6;
-  }
+const List = ({ forecast }: ListProps) => {
+  if (!forecast) return <Loading title="Carregando" />;
+  else forecast.length = 6;
+
   return (
     <Container>
       <GroupList>
-        {forecast?.map((item: any, i) => (
+        {forecast.map((item, i) => (
           <Card key={i}>
-            <p>{item?.weekday}</p>
+            <p>{item.weekday}</p>
             <Image
-              src={`/${item?.condition}.svg`}
-              alt={item?.condition}
+              src={`/${item.condition}.svg`}
+              alt={item.condition}
+              title={item.description}
               width={150}
               height={100}
             />

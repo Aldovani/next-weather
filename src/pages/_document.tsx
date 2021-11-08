@@ -37,6 +37,7 @@ export default class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin=""
           />
+          <link rel="shortcut icon" href="/icon.svg" type="image/x-icon" />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
             rel="stylesheet"

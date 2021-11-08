@@ -17,9 +17,9 @@ const useClock = () => {
 
   return {
     time: time.toLocaleTimeString("pt-br", {
-      hour: "numeric",
-      hour12: true,
-      minute: "numeric",
+      hour: "2-digit",
+      hourCycle: "h24",
+      minute: "2-digit",
     }),
     date: date,
   };
