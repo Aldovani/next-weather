@@ -3,6 +3,7 @@
  <img src="./public/logo-weather.svg" width="400px">
 </p>
 
+<img src="./.github/tela.png"/>
 
 ## 🚀 Tecnologias
 
